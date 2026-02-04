@@ -25,6 +25,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 #box{
@@ -37,7 +38,7 @@ main{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 button{
@@ -53,3 +54,4 @@ button{
 button:active{
   transform: scale(0.95);
 }
+
