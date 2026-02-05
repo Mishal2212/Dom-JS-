@@ -27,8 +27,6 @@ btn.addEventListener("click",function(){
     h1.style.transform="translate(-50%,-50%)";
     h1.style.color="hsl("+Math.floor(Math.random()*360)+",100%,50%)";
     h1.style.scale=Math.floor(Math.random()*4);
+    h1.style.rotate=Math.floor(Math.random()*360)+"deg";
     h1.innerText=quotes[a];
-
-
-
 })
