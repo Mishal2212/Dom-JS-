@@ -2,43 +2,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
 }
 html, body{
   height: 100%;
   width: 100%;
 }
-.main{
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  position: relative;
-}
-.elem{
-  height: 10rem;
-  width: 100%;
-  border: 2px solid white;
+body{
+  background-color: aqua;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
+  justify-content: center;
 }
 
-.elem h1{
-  font-size: 9vw;
+.card{
+  height: 480px;
+  width: 300px;
+  background-color: #fff;
+  border: 3px solid black;
+  border-radius: 15px;
   position: relative;
-  z-index: 9;
-  mix-blend-mode:difference;
 }
-
-.elem img{
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  background-position: center;
-  opacity: 0;
+#fullscreen{
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
   position: absolute;
-  transform: translate(-50%,-50%);
-
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+.storiyan{
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.storiyan::-webkit-scrollbar{
+  display: none;
+}
+.story{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  border: 2px solid red;
+  margin-right: 16px;
+}
+.story img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
