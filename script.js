@@ -1,26 +1,18 @@
-var grow=0;
-var btn=document.querySelector("button");
-var h2=document.querySelector("h2");
-var inner=document.querySelector(".inner");
+var img=document.querySelector('img');
+var love=document.getElementById('love');
 
-btn.addEventListener("click",function(){
-  
-  btn.style.pointerEvents="none";
-  var num=50 + Math.floor(Math.random()*50);
+img.addEventListener('dblclick',()=>{
+    
+    love.style.opacity="1";
+    love.style.transform="translate(-50%,-50%) scale(1) rotate(0deg)";
 
-  console.log(`your file will be downloaded in ${num/10} seconds`);
+    setTimeout(()=>{
+       love.style.transform="translate(-50%,-400%) scale(0) rotate(60deg)";
+       love.style.opacity="0";
+    },800)
 
-  var int=setInterval(function(){
-    grow++;
-    h2.innerHTML=grow+"%";
-    inner.style.width=grow+"%"
-  },num)
-
-  setTimeout(function(){
-    clearInterval(int);
-    btn.innerHTML="Downloaded";
-    btn.style.opacity=0.5;
-  },num*100)
-
-
+    setTimeout(()=>{
+       love.style.transform="translate(-50%,-50%) scale(0) rotate(-60deg)";
+       love.style.opacity="0";
+    },1000)
 })
