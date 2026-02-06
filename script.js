@@ -1,18 +1,20 @@
-var img=document.querySelector('img');
-var love=document.getElementById('love');
+var istatus=document.querySelector("h5");
+var btn=document.querySelector("button");
+var check=0
 
-img.addEventListener('dblclick',()=>{
-    
-    love.style.opacity="1";
-    love.style.transform="translate(-50%,-50%) scale(1) rotate(0deg)";
+btn.addEventListener("click",function(){
+   if(check===0){
+      istatus.innerHTML="Friends";
+      btn.innerHTML="Remove Friend";
+      istatus.style.color="green";
+      btn.style.backgroundColor="white";
+      check=1;
+   }else{
+      istatus.innerHTML="Stranger";
+      btn.innerHTML="Add Friend";
+      istatus.style.color="red";
+      btn.style.backgroundColor="rgb(2, 201, 2)";
+      check=0;
 
-    setTimeout(()=>{
-       love.style.transform="translate(-50%,-400%) scale(0) rotate(60deg)";
-       love.style.opacity="0";
-    },800)
-
-    setTimeout(()=>{
-       love.style.transform="translate(-50%,-50%) scale(0) rotate(-60deg)";
-       love.style.opacity="0";
-    },1000)
+   }
 })
