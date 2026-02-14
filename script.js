@@ -1,39 +1,50 @@
-let arr=[
-   {
-      dp:"https://plus.unsplash.com/premium_photo-1664203067979-47448934fd97?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1762245832997-d214d359c0d7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   },
-   {
-      dp:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1764698192472-bdef82c89ac4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   },
-   {
-      dp:"https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1768477007256-9a27fd44fc62?q=80&w=701&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   },
-   {
-      dp:"https://images.unsplash.com/photo-1601412436009-d964bd02edbc?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1768834605062-4eef74ce4683?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   },
-   {
-      dp:"https://plus.unsplash.com/premium_photo-1671656333460-793292581bc6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1769089220479-5389dc5d2268?q=80&w=1163&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   },
-   {
-      dp:"https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",story:"https://images.unsplash.com/photo-1764069970723-eff3e12de883?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   }
-]
-var storiyan=document.querySelector(".storiyan")
-var clutter=""
-var card=document.querySelector(".card")
-arr.forEach(function(elem,idx){
-   clutter+=`<div class="story">
-        <img id="${idx}" src="${elem.dp}" alt="">
-      </div>`
+const people = [
+  {
+    fullName: "Elon Musk",
+    image: "https://www.businessinsider.de/wp-content/uploads/2019/06/elon-musk.jpg",
+    profession: "Entrepreneur",
+    description: "CEO of Tesla and SpaceX, known for innovation in technology and space exploration.",
+    tags: ["Business", "Technology", "Innovation"]
+  },
+  {
+    fullName: "Taylor Swift",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+    profession: "Singer",
+    description: "Global pop star and songwriter famous for storytelling through music.",
+    tags: ["Music", "Pop", "Performer"]
+  },
+  {
+    fullName: "Virat Kohli",
+    image: "https://d16f573ilcot6q.cloudfront.net/wp-content/uploads/2024/11/Virat-Kohli-6.webp",
+    profession: "Cricketer",
+    description: "One of the greatest modern-day batsmen and former captain of the Indian cricket team.",
+    tags: ["Sports", "Cricket", "Fitness"]
+  },
+  {
+    fullName: "Sundar Pichai",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    profession: "CEO of Google",
+    description: "Technology executive leading Google and Alphabet with focus on AI and innovation.",
+    tags: ["Technology", "Leadership", "AI"]
+  },
+  {
+    fullName: "Priyanka Chopra",
+    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop",
+    profession: "Actor",
+    description: "International actress and producer known for Bollywood and Hollywood projects.",
+    tags: ["Acting", "Entertainment", "Fashion"]
+  }
+];
+
+var sum=``
+people.forEach(function(elem){
+   sum=sum+`<div class="card">
+    <img src="${elem.image}" alt="">
+    <h3>${elem.fullName}</h3>
+    <h4>${elem.profession}</h4>
+    <p>${elem.description}</p>
+    <p>${elem.tags}</p>
+  </div>`
 })
 
-storiyan.innerHTML=clutter;
-
-storiyan.addEventListener("click",function(dets){
-      document.querySelector("#fullscreen").style.display="block";
-      document.querySelector("#fullscreen").style.backgroundImage=`url(${arr[dets.target.id].story})`;
-
-      setTimeout(() => {
-         document.querySelector("#fullscreen").style.display="none";
-      }, 3000);
-})
+document.querySelector("body").innerHTML=sum;
