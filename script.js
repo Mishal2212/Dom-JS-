@@ -1,50 +1,38 @@
-const people = [
-  {
-    fullName: "Elon Musk",
-    image: "https://www.businessinsider.de/wp-content/uploads/2019/06/elon-musk.jpg",
-    profession: "Entrepreneur",
-    description: "CEO of Tesla and SpaceX, known for innovation in technology and space exploration.",
-    tags: ["Business", "Technology", "Innovation"]
-  },
-  {
-    fullName: "Taylor Swift",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
-    profession: "Singer",
-    description: "Global pop star and songwriter famous for storytelling through music.",
-    tags: ["Music", "Pop", "Performer"]
-  },
-  {
-    fullName: "Virat Kohli",
-    image: "https://d16f573ilcot6q.cloudfront.net/wp-content/uploads/2024/11/Virat-Kohli-6.webp",
-    profession: "Cricketer",
-    description: "One of the greatest modern-day batsmen and former captain of the Indian cricket team.",
-    tags: ["Sports", "Cricket", "Fitness"]
-  },
-  {
-    fullName: "Sundar Pichai",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
-    profession: "CEO of Google",
-    description: "Technology executive leading Google and Alphabet with focus on AI and innovation.",
-    tags: ["Technology", "Leadership", "AI"]
-  },
-  {
-    fullName: "Priyanka Chopra",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=crop",
-    profession: "Actor",
-    description: "International actress and producer known for Bollywood and Hollywood projects.",
-    tags: ["Acting", "Entertainment", "Fashion"]
+const keys = document.querySelectorAll(".key");
+
+// sab keys ko audio number assign kar do (28 → 63)
+keys.forEach((key, index) => {
+  key.dataset.audio = 28 + index;
+});
+
+document.addEventListener("keydown", function(e) {
+  let pressedKey = e.key.toUpperCase();
+  let el = document.getElementById(pressedKey);
+
+  if(el){
+    // visual press
+    el.style.transform = "scale(0.95)";
+    el.style.background = "orange";
+
+    // audio play
+    let num = el.dataset.audio;
+    let audio = new Audio(`audio/${num}.mp3`);
+    audio.currentTime = 0;
+    audio.play();
   }
-];
+});
 
-var sum=``
-people.forEach(function(elem){
-   sum=sum+`<div class="card">
-    <img src="${elem.image}" alt="">
-    <h3>${elem.fullName}</h3>
-    <h4>${elem.profession}</h4>
-    <p>${elem.description}</p>
-    <p>${elem.tags}</p>
-  </div>`
-})
+document.addEventListener("keyup", function(e) {
+  let pressedKey = e.key.toUpperCase();
+  let el = document.getElementById(pressedKey);
 
-document.querySelector("body").innerHTML=sum;
+  if(el){
+    el.style.transform = "scale(1)";
+
+    if(el.classList.contains("black")){
+      el.style.background = "black";
+    } else {
+      el.style.background = "white";
+    }
+  }
+});
