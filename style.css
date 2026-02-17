@@ -1,75 +1,40 @@
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#111;
-  font-family:Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
+.main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 30px;
+}
+.elem{
+  width: 100%;
+  background-color: grey;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top:20px;
+}
+.elem h1{
+  color: transparent;
+  font-size: 70px;
+  background: linear-gradient(to right,red,blue,green);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.elem button{
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: rgb(53, 53, 245);
 }
 
-.piano{
-  position:relative;
-  display:flex;
-}
-
-/* Common key style */
-.key{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  font-size:12px;
-  font-weight:bold;
-  box-sizing:border-box;
-}
-
-/* White keys */
-.white{
-  width:70px;
-  height:260px;
-  background:white;
-  border:1px solid #000;
-  color:black;
-  padding-bottom:8px;
-  z-index:1;
-}
-
-.white:active{
-  background:#ddd;
-}
-
-/* Black keys */
-.black{
-  position:absolute;
-  width:40px;
-  height:160px;
-  background:black;
-  color:white;
-  padding-bottom:8px;
-  z-index:2;
-}
-
-.black:active{
-  background:#333;
-}
-
-/* Octave 1 */
-.black:nth-of-type(2){ left:50px; }
-.black:nth-of-type(4){ left:120px; }
-.black:nth-of-type(7){ left:260px; }
-.black:nth-of-type(9){ left:330px; }
-.black:nth-of-type(11){ left:400px; }
-
-/* Octave 2 */
-.black:nth-of-type(14){ left:540px; }
-.black:nth-of-type(16){ left:610px; }
-.black:nth-of-type(19){ left:750px; }
-.black:nth-of-type(21){ left:820px; }
-.black:nth-of-type(23){ left:890px; }
-
-/* Octave 3 */
-.black:nth-of-type(26){ left:1030px; }
-.black:nth-of-type(28){ left:1100px; }
-.black:nth-of-type(31){ left:1240px; }
-.black:nth-of-type(33){ left:1310px; }
-.black:nth-of-type(35){ left:1380px; }
